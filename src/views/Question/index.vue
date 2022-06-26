@@ -1,7 +1,6 @@
-vue
 <template>
 <div>
-    <router-view></router-view>
+    问答
 </div>
 </template>
 
