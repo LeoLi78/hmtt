@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-nav-bar title="登录">
+    <van-nav-bar title="登录" @click-left="$router.back()">
       <template #left>
         <van-icon name="cross" />
       </template>
@@ -31,9 +31,10 @@
           { pattern: /^\d{6}$/, message: '不符合验证码的格式' },
         ]"
       >
-        <template #left-icon>
+        <!-- <template #left-icon>
           <i class="toutiao toutiao-yanzhengma"></i>
-        </template>
+        </template> -->
+        <MyIcon name="yanzhengma" slot="left-icon"></MyIcon>
         <template #button>
           <van-count-down
             v-if="isCountDownShow"
@@ -64,12 +65,13 @@
 </template>
 
 <script>
+// import MyIcon from '@/components/MyIcon.vue'
 import { getSmsCode, login } from '@/api/user'
 export default {
   created () { },
   data () {
     return {
-      mobile: '13911111111', // 手机号
+      mobile: '15879667447', // 手机号
       code: '246810', // 短信验证码
       time: 5 * 1000,
       isCountDownShow: false
@@ -82,6 +84,7 @@ export default {
         const res = await login(values)
         console.log(res)
         this.$store.commit('setUser', res.data.data)
+        this.$router.push({ name: 'my' })
       } catch (err) {
         console.log(err)
       }
@@ -107,7 +110,9 @@ export default {
   computed: {},
   watch: {},
   filters: {},
-  components: {}
+  components: {
+    // MyIcon
+  }
 }
 </script>
 

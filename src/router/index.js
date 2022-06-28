@@ -15,7 +15,7 @@ const routes = [
     component: Layout,
     children: [
       { path: 'home', component: Home },
-      { path: 'my', component: My },
+      { path: 'my', component: My, name: 'my' },
       { path: 'video', component: Video },
       { path: 'question', component: Question }
     ]
