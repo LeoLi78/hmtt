@@ -21,7 +21,7 @@
           <p>头条</p>
         </li>
         <li>
-          <p>{{userInfo.fans_count }}</p>
+          <p>{{ userInfo.fans_count }}</p>
           <p>关注</p>
         </li>
         <li>
@@ -122,7 +122,7 @@ export default {
 }
 .header-nologin {
   text-align: center;
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;

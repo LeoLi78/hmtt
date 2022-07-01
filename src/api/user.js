@@ -31,10 +31,10 @@ export const login = ({ mobile, code }) => {
  */
 export const getUserInfo = () => {
   return http({
-    url: 'user',
+    url: 'user'
     // 当只有路径没有headers时，请求不成功：解决查看文档接口看有什么要求再加入相应的。
-    headers: {
-      Authorization: 'Bearer ' + store.state.user.token
-    }
+    // headers: {
+    //   Authorization: 'Bearer ' + store.state.user.token
+    // }
   })
 }

@@ -96,7 +96,7 @@ export default {
         this.isCountDownShow = true
         try {
           await getSmsCode(this.mobile)
-          this.toast.success('发送成功')
+          this.$toast.success('发送成功')
         } catch (err) {
           this.$toast.fail('发送失败，请重试')
         }

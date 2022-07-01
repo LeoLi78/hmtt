@@ -1,6 +1,8 @@
 <template>
-  <div >
-    <router-view class="main"/>
+  <div>
+    <keep-alive :include="['Home']">
+      <router-view class="main" />
+    </keep-alive>
     <van-tabbar route>
       <van-tabbar-item replace to="/home" icon="home-o">
         首页
@@ -24,6 +26,7 @@
 
 <script>
 export default {
+  name: 'Layout',
   created () { },
   data () {
     return {}
@@ -43,7 +46,7 @@ export default {
     font-size: 20px !important;
   }
 }
-.main{
+.main {
   margin-bottom: 100px;
 }
 </style>
